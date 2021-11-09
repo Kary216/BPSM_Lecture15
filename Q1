@@ -1,0 +1,35 @@
+#!/usr/local/bin/python3
+import os
+print("\n\nImported os\n\n")
+
+def personal(name,age,col,py,world) :
+    import string
+    print("\nYou have provided the following:\n\tName: ",name,"\n\tAge: ",age,"\n\tFave colour: ",col,"\n\tPython preference: ",py,"\n\tFlat world: ",world)
+    for character in name :
+        if character not in string.ascii_letters :
+            return print("\nYou are more than just a number!")
+    if age>99 or age<3 :
+        print("\n" + name + ", I really dont think thats your age...")
+    if col.upper() != "BLACK" :
+        print("\nI really like black, but", col, "is OK too!")
+    else :
+        print("\nI like black too!")
+    if py.upper()[0] != "Y" :
+        print("\nI am sorry to hear that")
+    else :
+        print("\nGlad you like it")
+    if world != "False" :
+        return print("\nThe world is not flat!")
+    return "OK", print("\nAll done, thank you.")
+
+details = {}
+
+details["Name"] = input("Hi, what's your name?\n\t")
+details["Age"] = int(input("How old are you?\n\t"))
+details["Colour"] = input("What is your favourite colour?\n\t")
+details["Python"] = input("Do you like python?\n\t")
+details["World"] = input("The world is flat: True or False?\n\t")
+
+personal(*list(details.values()))
+
+print("\n\nThis was the dictionary you set up...\n\n", details, "\n\nBye!\n\n")
